@@ -121,8 +121,8 @@ module.exports = {
             for(let i = 0; i < this.frames; i++){
                 // extract the information we need from the duration
                 let days = Math.floor(timeResult.asDays());
-                let hours = Math.floor(timeResult.asHours() - (days * 24))-5;
-                let minutes = Math.floor(timeResult.asMinutes()) - (days * 24 * 60) - (hours * 60)-30;
+                let hours = Math.floor(timeResult.asHours() - (days * 24));
+                let minutes = Math.floor(timeResult.asMinutes()) - (days * 24 * 60) - (hours * 60);
                 let seconds = Math.floor(timeResult.asSeconds()) - (days * 24 * 60 * 60) - (hours * 60 * 60) - (minutes * 60);
                 
                 // make sure we have at least 2 characters in the string
@@ -133,7 +133,7 @@ module.exports = {
                 
                 // build the date string
                 let string = [days, 'd ', hours, 'h ', minutes, 'm ', seconds, 's'].join('');
-                
+                console.log(string);
                 // paint BG
                 ctx.fillStyle = this.bg;
                 ctx.fillRect(0, 0, this.width, this.height);
