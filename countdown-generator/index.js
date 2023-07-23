@@ -22,7 +22,7 @@ module.exports = {
         // Set some sensible upper / lower bounds
         this.width = this.clamp(width, 150, 500);
         this.height = this.clamp(height, 150, 500);
-        this.frames = this.clamp(frames, 1, 90);
+        this.frames = this.clamp(frames, 1, 300);
         
         this.bg = '#' + bg;
         this.textColor = '#' + color;
@@ -121,8 +121,8 @@ module.exports = {
             for(let i = 0; i < this.frames; i++){
                 // extract the information we need from the duration
                 let days = Math.floor(timeResult.asDays());
-                let hours = Math.floor(timeResult.asHours() - (days * 24));
-                let minutes = Math.floor(timeResult.asMinutes()) - (days * 24 * 60) - (hours * 60);
+                let hours = Math.floor(timeResult.asHours() - (days * 24))-5;
+                let minutes = Math.floor(timeResult.asMinutes()) - (days * 24 * 60) - (hours * 60)-30;
                 let seconds = Math.floor(timeResult.asSeconds()) - (days * 24 * 60 * 60) - (hours * 60 * 60) - (minutes * 60);
                 
                 // make sure we have at least 2 characters in the string
