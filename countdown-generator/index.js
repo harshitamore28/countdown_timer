@@ -5,7 +5,10 @@ const path = require('path');
 const GIFEncoder = require('gifencoder');
 const Canvas = require('canvas');
 const moment = require('moment');
-console.log(moment());
+require('moment-timezone');
+moment.tz.setDefault("Asia/Calcutta");
+console.log(moment.tz.guess());
+// moment = moment.tz("Asia/Calcutta");
 module.exports = {
     /**
      * Initialise the GIF generation
