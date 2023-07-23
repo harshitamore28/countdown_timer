@@ -36,7 +36,6 @@ app.get('/generate', function (req, res) {
 // serve the gif to a browser
 app.get('/serve', function (req, res) {
     let {time, width, height, color, bg, name, frames} = req.query;
-
     if(!time){
         throw Error('Time parameter is required.');
     }

@@ -5,7 +5,7 @@ const path = require('path');
 const GIFEncoder = require('gifencoder');
 const Canvas = require('canvas');
 const moment = require('moment');
-
+console.log(moment());
 module.exports = {
     /**
      * Initialise the GIF generation
@@ -61,7 +61,7 @@ module.exports = {
     time: function (timeString) {
         // grab the current and target time
         let target = moment(timeString);
-        let current = moment().utcOffset("+05:30").format();
+        let current = moment();
         
         // difference between the 2 (in ms)
         let difference = target.diff(current);
