@@ -61,7 +61,7 @@ module.exports = {
     time: function (timeString) {
         // grab the current and target time
         let target = moment(timeString);
-        let current = moment();
+        let current = moment().utcOffset("+05:30").format();
         
         // difference between the 2 (in ms)
         let difference = target.diff(current);
